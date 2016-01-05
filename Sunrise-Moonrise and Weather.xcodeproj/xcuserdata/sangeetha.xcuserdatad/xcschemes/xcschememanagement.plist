@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Sunrise-Moonrise and Weather.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>915E982F1C3B4786009B1161</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>915E98431C3B4787009B1161</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>915E984E1C3B4787009B1161</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
