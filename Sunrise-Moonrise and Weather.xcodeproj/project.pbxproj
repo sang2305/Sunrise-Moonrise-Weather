@@ -7,13 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		913CC9E21C48707100A72912 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913CC9E11C48707000A72912 /* Weather.swift */; };
 		915E98341C3B4786009B1161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E98331C3B4786009B1161 /* AppDelegate.swift */; };
-		915E98361C3B4786009B1161 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E98351C3B4786009B1161 /* ViewController.swift */; };
+		915E98361C3B4786009B1161 /* CurrentForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E98351C3B4786009B1161 /* CurrentForecastViewController.swift */; };
 		915E98391C3B4787009B1161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E98371C3B4787009B1161 /* Main.storyboard */; };
 		915E983B1C3B4787009B1161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915E983A1C3B4787009B1161 /* Assets.xcassets */; };
 		915E983E1C3B4787009B1161 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E983C1C3B4787009B1161 /* LaunchScreen.storyboard */; };
 		915E98491C3B4787009B1161 /* Sunrise_Moonrise_and_WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E98481C3B4787009B1161 /* Sunrise_Moonrise_and_WeatherTests.swift */; };
 		915E98541C3B4787009B1161 /* Sunrise_Moonrise_and_WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E98531C3B4787009B1161 /* Sunrise_Moonrise_and_WeatherUITests.swift */; };
+		915E98621C3DEB71009B1161 /* WeekForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E98611C3DEB71009B1161 /* WeekForecastViewController.swift */; };
+		915E98641C3DEB94009B1161 /* SunMoonTimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E98631C3DEB94009B1161 /* SunMoonTimesViewController.swift */; };
+		915E98661C3DEBE7009B1161 /* SavedLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E98651C3DEBE7009B1161 /* SavedLocationsViewController.swift */; };
+		915E98681C3DEC71009B1161 /* AerisAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E98671C3DEC71009B1161 /* AerisAPIClient.swift */; };
+		91A3DB661C56EF3E00C292A7 /* WeekTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3DB651C56EF3E00C292A7 /* WeekTableCell.swift */; };
+		91A3DB681C56F23F00C292A7 /* WeekForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3DB671C56F23F00C292A7 /* WeekForecast.swift */; };
+		91A3DB6C1C59962300C292A7 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3DB6B1C59962300C292A7 /* Sun.swift */; };
+		91A3DB6E1C599ACE00C292A7 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3DB6D1C599ACE00C292A7 /* Moon.swift */; };
+		91A3DB701C5AA3FC00C292A7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3DB6F1C5AA3FC00C292A7 /* TabBarViewController.swift */; };
+		91A3DB721C5C2C8600C292A7 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3DB711C5C2C8600C292A7 /* CoreDataStackManager.swift */; };
+		91A3DB741C5C2D3100C292A7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3DB731C5C2D3100C292A7 /* Location.swift */; };
+		91A3DB791C6026F000C292A7 /* Sunrise-Moonrise-Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91A3DB771C6026F000C292A7 /* Sunrise-Moonrise-Weather.xcdatamodeld */; };
+		91A3DB7B1C617E3B00C292A7 /* locationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3DB7A1C617E3B00C292A7 /* locationTableCell.swift */; };
+		91AB68181C70015A000DD466 /* GoogleTimeZoneAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AB68171C70015A000DD466 /* GoogleTimeZoneAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		913CC9E11C48707000A72912 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		915E98301C3B4786009B1161 /* Sunrise-Moonrise and Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sunrise-Moonrise and Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		915E98331C3B4786009B1161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		915E98351C3B4786009B1161 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		915E98351C3B4786009B1161 /* CurrentForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentForecastViewController.swift; sourceTree = "<group>"; };
 		915E98381C3B4787009B1161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		915E983A1C3B4787009B1161 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		915E983D1C3B4787009B1161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +63,20 @@
 		915E984F1C3B4787009B1161 /* Sunrise-Moonrise and WeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sunrise-Moonrise and WeatherUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		915E98531C3B4787009B1161 /* Sunrise_Moonrise_and_WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sunrise_Moonrise_and_WeatherUITests.swift; sourceTree = "<group>"; };
 		915E98551C3B4787009B1161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		915E98611C3DEB71009B1161 /* WeekForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekForecastViewController.swift; sourceTree = "<group>"; };
+		915E98631C3DEB94009B1161 /* SunMoonTimesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunMoonTimesViewController.swift; sourceTree = "<group>"; };
+		915E98651C3DEBE7009B1161 /* SavedLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedLocationsViewController.swift; sourceTree = "<group>"; };
+		915E98671C3DEC71009B1161 /* AerisAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AerisAPIClient.swift; sourceTree = "<group>"; };
+		91A3DB651C56EF3E00C292A7 /* WeekTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekTableCell.swift; sourceTree = "<group>"; };
+		91A3DB671C56F23F00C292A7 /* WeekForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekForecast.swift; sourceTree = "<group>"; };
+		91A3DB6B1C59962300C292A7 /* Sun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
+		91A3DB6D1C599ACE00C292A7 /* Moon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
+		91A3DB6F1C5AA3FC00C292A7 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		91A3DB711C5C2C8600C292A7 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		91A3DB731C5C2D3100C292A7 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		91A3DB781C6026F000C292A7 /* Sunrise-Moonrise-Weather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Sunrise-Moonrise-Weather.xcdatamodel"; sourceTree = "<group>"; };
+		91A3DB7A1C617E3B00C292A7 /* locationTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = locationTableCell.swift; sourceTree = "<group>"; };
+		91AB68171C70015A000DD466 /* GoogleTimeZoneAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleTimeZoneAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +127,15 @@
 		915E98321C3B4786009B1161 /* Sunrise-Moonrise and Weather */ = {
 			isa = PBXGroup;
 			children = (
+				915E986B1C3DEC89009B1161 /* Controller */,
+				915E986A1C3DEC81009B1161 /* View */,
+				915E98691C3DEC79009B1161 /* Model */,
 				915E98331C3B4786009B1161 /* AppDelegate.swift */,
-				915E98351C3B4786009B1161 /* ViewController.swift */,
 				915E98371C3B4787009B1161 /* Main.storyboard */,
 				915E983A1C3B4787009B1161 /* Assets.xcassets */,
 				915E983C1C3B4787009B1161 /* LaunchScreen.storyboard */,
 				915E983F1C3B4787009B1161 /* Info.plist */,
+				91A3DB711C5C2C8600C292A7 /* CoreDataStackManager.swift */,
 			);
 			path = "Sunrise-Moonrise and Weather";
 			sourceTree = "<group>";
@@ -123,6 +156,42 @@
 				915E98551C3B4787009B1161 /* Info.plist */,
 			);
 			path = "Sunrise-Moonrise and WeatherUITests";
+			sourceTree = "<group>";
+		};
+		915E98691C3DEC79009B1161 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				915E98671C3DEC71009B1161 /* AerisAPIClient.swift */,
+				913CC9E11C48707000A72912 /* Weather.swift */,
+				91A3DB671C56F23F00C292A7 /* WeekForecast.swift */,
+				91A3DB6B1C59962300C292A7 /* Sun.swift */,
+				91A3DB6D1C599ACE00C292A7 /* Moon.swift */,
+				91A3DB731C5C2D3100C292A7 /* Location.swift */,
+				91A3DB771C6026F000C292A7 /* Sunrise-Moonrise-Weather.xcdatamodeld */,
+				91AB68171C70015A000DD466 /* GoogleTimeZoneAPIClient.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		915E986A1C3DEC81009B1161 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				91A3DB651C56EF3E00C292A7 /* WeekTableCell.swift */,
+				91A3DB7A1C617E3B00C292A7 /* locationTableCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		915E986B1C3DEC89009B1161 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				915E98651C3DEBE7009B1161 /* SavedLocationsViewController.swift */,
+				915E98631C3DEB94009B1161 /* SunMoonTimesViewController.swift */,
+				915E98611C3DEB71009B1161 /* WeekForecastViewController.swift */,
+				915E98351C3B4786009B1161 /* CurrentForecastViewController.swift */,
+				91A3DB6F1C5AA3FC00C292A7 /* TabBarViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +325,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				915E98361C3B4786009B1161 /* ViewController.swift in Sources */,
+				91A3DB7B1C617E3B00C292A7 /* locationTableCell.swift in Sources */,
+				91A3DB6C1C59962300C292A7 /* Sun.swift in Sources */,
+				913CC9E21C48707100A72912 /* Weather.swift in Sources */,
+				915E98681C3DEC71009B1161 /* AerisAPIClient.swift in Sources */,
+				91A3DB721C5C2C8600C292A7 /* CoreDataStackManager.swift in Sources */,
+				915E98361C3B4786009B1161 /* CurrentForecastViewController.swift in Sources */,
+				91A3DB681C56F23F00C292A7 /* WeekForecast.swift in Sources */,
+				915E98661C3DEBE7009B1161 /* SavedLocationsViewController.swift in Sources */,
+				91A3DB741C5C2D3100C292A7 /* Location.swift in Sources */,
+				91AB68181C70015A000DD466 /* GoogleTimeZoneAPIClient.swift in Sources */,
 				915E98341C3B4786009B1161 /* AppDelegate.swift in Sources */,
+				915E98641C3DEB94009B1161 /* SunMoonTimesViewController.swift in Sources */,
+				915E98621C3DEB71009B1161 /* WeekForecastViewController.swift in Sources */,
+				91A3DB791C6026F000C292A7 /* Sunrise-Moonrise-Weather.xcdatamodeld in Sources */,
+				91A3DB701C5AA3FC00C292A7 /* TabBarViewController.swift in Sources */,
+				91A3DB6E1C599ACE00C292A7 /* Moon.swift in Sources */,
+				91A3DB661C56EF3E00C292A7 /* WeekTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,10 +481,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Sunrise-Moonrise and Weather/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Sangeetha.Sunrise-Moonrise-and-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Sunrise_Moonrise_and_Weather-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -408,10 +497,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Sunrise-Moonrise and Weather/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Sangeetha.Sunrise-Moonrise-and-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Sunrise_Moonrise_and_Weather-Swift.h";
 			};
 			name = Release;
 		};
@@ -482,6 +575,7 @@
 				915E985A1C3B4787009B1161 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		915E985B1C3B4787009B1161 /* Build configuration list for PBXNativeTarget "Sunrise-Moonrise and WeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +584,7 @@
 				915E985D1C3B4787009B1161 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		915E985E1C3B4787009B1161 /* Build configuration list for PBXNativeTarget "Sunrise-Moonrise and WeatherUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,8 +593,22 @@
 				915E98601C3B4787009B1161 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		91A3DB771C6026F000C292A7 /* Sunrise-Moonrise-Weather.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				91A3DB781C6026F000C292A7 /* Sunrise-Moonrise-Weather.xcdatamodel */,
+			);
+			currentVersion = 91A3DB781C6026F000C292A7 /* Sunrise-Moonrise-Weather.xcdatamodel */;
+			path = "Sunrise-Moonrise-Weather.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 915E98281C3B4786009B1161 /* Project object */;
 }
