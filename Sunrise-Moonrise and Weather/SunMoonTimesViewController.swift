@@ -59,7 +59,7 @@ class SunMoonTimesViewController: UIViewController,UITextFieldDelegate{
         let month = components.month
         let day = components.day
         dateToday = "\(year)"+"-"+"\(month)"+"-"+"\(day)"
-       let recognizer = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+       let recognizer = UITapGestureRecognizer(target: self, action: #selector(SunMoonTimesViewController.handleTap(_:)))
        view.addGestureRecognizer(recognizer)
     }
     
@@ -69,6 +69,14 @@ class SunMoonTimesViewController: UIViewController,UITextFieldDelegate{
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.cityLabel.text = ""
+        self.dateLabel.text = ""
+        self.sunriseLabel.text = ""
+        self.sunsetLabel.text = ""
+        self.moonriseLabel.text = ""
+        self.moonsetLabel.text = ""
+        self.phaseLabel.text = ""
+        self.phaseNameLabel.text = ""
         activityIndicator.hidden = false
         activityIndicator.startAnimating()
         self.navigationController?.navigationBarHidden = false
@@ -103,7 +111,7 @@ class SunMoonTimesViewController: UIViewController,UITextFieldDelegate{
         
         sender.inputView = datePickerView
         
-        datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        datePickerView.addTarget(self, action: #selector(SunMoonTimesViewController.datePickerValueChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     
@@ -134,7 +142,11 @@ class SunMoonTimesViewController: UIViewController,UITextFieldDelegate{
     }
     
     func displayInfo(dateAssigned : String){
-        self.cityLabel.text = displayLocation
+        cityName = displayLocation
+        cityArray = cityName.componentsSeparatedByString(",")
+        self.cityLabel.text = cityArray[0]
+
+      //  self.cityLabel.text = displayLocation
         self.dateLabel.text = dateAssigned
         AerisAPIClient.sharedInstance().downloadSunMoonInfo(displayLocation,date: dateAssigned){(success,errorString) in
             if success{

@@ -9,10 +9,14 @@
 import UIKit
 import CoreData
 import CoreLocation
+import GoogleMaps
 
 var savedLocation : String!
 var launch : String!
 var unitCheck : Bool! = false
+var cityArray : [String]!
+var cityName : String!
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate{
@@ -22,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate{
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        GMSServices.provideAPIKey("AIzaSyDvjbv2Hz6qgwu5oUXd-E6Ier-yvcjeLiw")
        
         return true
     }

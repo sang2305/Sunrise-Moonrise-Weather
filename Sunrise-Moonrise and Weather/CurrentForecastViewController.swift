@@ -16,7 +16,7 @@ class CurrentForecastViewController: UIViewController, CLLocationManagerDelegate
   
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    @IBOutlet weak var currentTempLabel: UILabel! 
+    @IBOutlet weak var currentTempLabel: UILabel!
     
     @IBOutlet weak var feelsLikeTempLabel: UILabel!
     
@@ -36,7 +36,7 @@ class CurrentForecastViewController: UIViewController, CLLocationManagerDelegate
    
     let locationManager = CLLocationManager()
    var place : String!
-    
+      
     @IBOutlet weak var tempUnitLabel: UILabel!
     
     
@@ -46,9 +46,16 @@ class CurrentForecastViewController: UIViewController, CLLocationManagerDelegate
     var attStringCF:NSMutableAttributedString!
     var attStringFT:NSMutableAttributedString!
     var attStringFF:NSMutableAttributedString!
+    
+    let fontCT:UIFont? = UIFont(name: "Helvetica", size:42)
+    let fontSuperCT:UIFont? = UIFont(name: "Helvetica", size:18)
+    let fontCF:UIFont? = UIFont(name: "Helvetica", size:17)
+    let fontSuperCF:UIFont? = UIFont(name: "Helvetica", size:8)
+
 
     
     var defaults = NSUserDefaults.standardUserDefaults()
+ //     var hour = NSCalendar.currentCalendar().component(.Hour, fromDate: NSDate())
 
   override func viewDidLoad()
     {
@@ -60,16 +67,28 @@ class CurrentForecastViewController: UIViewController, CLLocationManagerDelegate
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+    //    self.view.backgroundColor = getBackgroundColor(hour)
+        self.cityLabel.text = ""
+        self.currentTempLabel.text = ""
+        self.tempUnitLabel.text = ""
+        self.feelsLikeTempLabel.text = ""
+        self.feelsUnitLabel.text = ""
+        self.humidityLabel.text = ""
+        self.precipitationLabel.text = ""
+        self.summaryLabel.text = ""
+        self.windDirLabel.text = ""
+        self.WindSpeedLabel.text = ""
+      
         activityIndicator.hidden = false
         activityIndicator.startAnimating()
-        
-        //To use superscript for degreeC and degreeF)
+        unitCheck = NSUserDefaults.standardUserDefaults().boolForKey("SwitchState")
+       /*  //To use superscript for degreeC and degreeF)
         let fontCT:UIFont? = UIFont(name: "Helvetica", size:42)
         let fontSuperCT:UIFont? = UIFont(name: "Helvetica", size:18)
         let fontCF:UIFont? = UIFont(name: "Helvetica", size:17)
         let fontSuperCF:UIFont? = UIFont(name: "Helvetica", size:8)
-        unitCheck = NSUserDefaults.standardUserDefaults().boolForKey("SwitchState")
-        if (unitCheck == true){
+        
+       if (unitCheck == true){
             
             attStringFT = NSMutableAttributedString(string: "oF", attributes: [NSFontAttributeName:fontCT!])
             attStringFT.setAttributes([NSFontAttributeName:fontSuperCT!,NSBaselineOffsetAttributeName:18], range: NSRange(location:0,length:1))
@@ -84,14 +103,14 @@ class CurrentForecastViewController: UIViewController, CLLocationManagerDelegate
             attStringCF.setAttributes([NSFontAttributeName:fontSuperCF!,NSBaselineOffsetAttributeName:8], range: NSRange(location:0,length:1))
             tempUnitLabel.attributedText = attStringCT
             feelsUnitLabel.attributedText = attStringCF
-        }
+        }*/
         
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.activityIndicator.stopAnimating()
-        self.activityIndicator.hidden = true
+        //self.activityIndicator.stopAnimating()
+       // self.activityIndicator.hidden = true
         let model = (tabBarController as! TabBarViewController).model
         
         if(model.newLocation != nil){
@@ -103,7 +122,9 @@ class CurrentForecastViewController: UIViewController, CLLocationManagerDelegate
                 activityIndicator.hidden = false
                 activityIndicator.startAnimating()
                 self.updateWeatherInfo(model.newLocation)
-                self.cityLabel.text = model.newLocation
+                cityName = model.newLocation
+                cityArray = cityName.componentsSeparatedByString(",")
+                self.cityLabel.text = cityArray[0]
             }
         }
         if launch == "First" {
@@ -153,7 +174,10 @@ class CurrentForecastViewController: UIViewController, CLLocationManagerDelegate
             let State = placeMark.addressDictionary!["State"] as? String
             savedLocation = city!+","+State!
             print("Location: \(savedLocation)")
-            self.cityLabel.text = savedLocation
+            cityName = savedLocation
+            cityArray = cityName.componentsSeparatedByString(",")
+            self.cityLabel.text = cityArray[0]
+            //self.cityLabel.text = savedLocation
             geoCoder.geocodeAddressString(savedLocation, completionHandler: { (placemarks, error) in
                 if error != nil {
                     print(error)
@@ -196,6 +220,21 @@ class CurrentForecastViewController: UIViewController, CLLocationManagerDelegate
      
     }
     
+  
+    func getBackgroundColor(hour:Int) -> UIColor {
+        let morning = UIColor(red: 255/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1.0)
+        let noon = UIColor(red: 200/255.0, green: 200/255.0, blue: 255/255.0, alpha: 1.0)
+        let night = UIColor(red: 200/255.0, green: 255/255.0, blue: 200/255.0, alpha: 1.0)
+        switch hour {
+        case 7...11:   // 7am-11am
+            return morning
+        case 12...16:  // 12pm-4pm
+            return noon
+        default:
+            return night
+        }
+    }
+    
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Error while updating location " + error.localizedDescription)
          self.locationManager.stopUpdatingLocation()
@@ -217,7 +256,8 @@ class CurrentForecastViewController: UIViewController, CLLocationManagerDelegate
             let errorAlert = UIAlertController(title: "Please enable the location services", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
             errorAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(errorAlert, animated: true, completion: nil)
-
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.hidden = true
             
         default:
             break
@@ -233,10 +273,23 @@ class CurrentForecastViewController: UIViewController, CLLocationManagerDelegate
                     if (unitCheck == true){
                         self.currentTempLabel.text = "\(String(weatherInfo.temperatureF))"
                         self.feelsLikeTempLabel.text = "Feels like \(String(weatherInfo.feelTemperatureF))"
+                        self.attStringFT = NSMutableAttributedString(string: "oF", attributes: [NSFontAttributeName:self.fontCT!])
+                        self.attStringFT.setAttributes([NSFontAttributeName:self.fontSuperCT!,NSBaselineOffsetAttributeName:18], range: NSRange(location:0,length:1))
+                        self.attStringFF = NSMutableAttributedString(string: "oF", attributes: [NSFontAttributeName:self.fontCF!])
+                        self.attStringFF.setAttributes([NSFontAttributeName:self.fontSuperCF!,NSBaselineOffsetAttributeName:8], range: NSRange(location:0,length:1))
+                        self.tempUnitLabel.attributedText = self.attStringFT
+                        self.feelsUnitLabel.attributedText = self.attStringFF
+
                         
                     }else{
                         self.currentTempLabel.text = "\(String(weatherInfo.temperatureC))"
                         self.feelsLikeTempLabel.text = "Feels like \(String(weatherInfo.feelTemperatureC))"
+                        self.attStringCT = NSMutableAttributedString(string: "oC", attributes: [NSFontAttributeName:self.fontCT!])
+                        self.attStringCT.setAttributes([NSFontAttributeName:self.fontSuperCT!,NSBaselineOffsetAttributeName:18], range: NSRange(location:0,length:1))
+                        self.attStringCF = NSMutableAttributedString(string: "oC", attributes: [NSFontAttributeName:self.fontCF!])
+                        self.attStringCF.setAttributes([NSFontAttributeName:self.fontSuperCF!,NSBaselineOffsetAttributeName:8], range: NSRange(location:0,length:1))
+                        self.tempUnitLabel.attributedText = self.attStringCT
+                        self.feelsUnitLabel.attributedText = self.attStringCF
                         
                     }
 
@@ -247,7 +300,8 @@ class CurrentForecastViewController: UIViewController, CLLocationManagerDelegate
                     self.precipitationLabel.text = "Precipitation :\((weatherInfo.precipProbability) * 100)%"
                     self.windDirLabel.text = weatherInfo.windDir
                     self.WindSpeedLabel.text = "Wind :\(String(weatherInfo.windSpeed))mph"
-
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.hidden = true
                     }
                 )
                 }else{
@@ -255,12 +309,13 @@ class CurrentForecastViewController: UIViewController, CLLocationManagerDelegate
                     let errorAlert = UIAlertController(title: errorString!, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
                     errorAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(errorAlert, animated: true, completion: nil)
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.hidden = true
                 })
                 
             }
         }
-        self.activityIndicator.stopAnimating()
-        self.activityIndicator.hidden = true
+       
         
 
 

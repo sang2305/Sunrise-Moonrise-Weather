@@ -11,19 +11,23 @@ import UIKit
 import CoreData
 import CoreLocation
 import AddressBookUI
+import GoogleMaps
 
-class SavedLocationsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
+class SavedLocationsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,LocateAddress{
     
     // Temperature Switch
     @IBOutlet weak var tempSwitch: UISwitch!
     
-    @IBOutlet weak var locationTextField: UITextField!
+    
     
     @IBOutlet weak var locationTableView: UITableView!
     
     var defaults = NSUserDefaults.standardUserDefaults()
     
     var locationArray = [NSManagedObject]()
+    
+    var searchResultController:SearchResultsController!
+    var resultsArray = [String]()
     
     lazy var sharedContext: NSManagedObjectContext = {
         return CoreDataStackManager.sharedInstance().managedObjectContext!
@@ -54,10 +58,47 @@ class SavedLocationsViewController: UIViewController,UITableViewDataSource,UITab
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        searchResultController = SearchResultsController()
+        searchResultController.delegate = self
+
+    }
+    
+    func searchBar(searchBar: UISearchBar,
+                   textDidChange searchText: String){
+       
+        let placesClient = GMSPlacesClient()
+        placesClient.autocompleteQuery(searchText, bounds: nil, filter: nil) { (results, error:NSError?) -> Void in
+            self.resultsArray.removeAll()
+            
+            if results == nil {
+                return
+            }
+            guard error == nil else {
+                print("Autocomplete error \(error)")
+                return
+            }
+            for result in results!{
+               
+                if let result = result as? GMSAutocompletePrediction{
+                    self.resultsArray.append(result.attributedFullText.string)
+                }
+            }
+           
+                self.searchResultController.reloadDataWithArray(self.resultsArray)
+          
+            
+        }
+    }
+
     
     @IBAction func addLocation(sender: AnyObject) {
-        
-        self.forwardGeocoding(locationTextField.text!)
+      
+        let searchController = UISearchController(searchResultsController: searchResultController)
+        searchController.searchBar.delegate = self
+        self.presentViewController(searchController, animated: true, completion: nil)
+       // self.forwardGeocoding(locationTextField.text!)
     }
     
     func forwardGeocoding(address: String) {
@@ -71,10 +112,13 @@ class SavedLocationsViewController: UIViewController,UITableViewDataSource,UITab
             if placemarks?.count > 0 {
                 let placemark = placemarks?[0]
                 let location = placemark?.location
+       //       let cityName = (placemark?.locality)!
+            
                 if location != nil{
-                    self.saveLocation(self.locationTextField.text!)
+               //     self.saveLocation(self.locationTextField.text!)
+                    self.saveLocation(address)
                     self.locationTableView.reloadData()
-                    self.locationTextField.text = ""
+               //     self.locationTextField.text = ""
                 } 
             }
         })
@@ -178,7 +222,7 @@ class SavedLocationsViewController: UIViewController,UITableViewDataSource,UITab
             do {
                 try sharedContext.save()
             } catch let error as NSError {
-                print("Error clearing photos from Pin: \(error)")
+                print("Error removing location: \(error)")
             }
             
             locationArray.removeAtIndex(indexPath.row)
@@ -188,7 +232,10 @@ class SavedLocationsViewController: UIViewController,UITableViewDataSource,UITab
 
 
         }
-    }
+        
+        
+        
+                   }
     
     class func sharedInstance() -> SavedLocationsViewController {
         
@@ -199,8 +246,6 @@ class SavedLocationsViewController: UIViewController,UITableViewDataSource,UITab
         return Singleton.sharedInstance
     }
     
-
-    
-       
+   
     
 }

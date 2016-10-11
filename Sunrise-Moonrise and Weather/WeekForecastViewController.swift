@@ -65,7 +65,11 @@ class WeekForecastViewController: UIViewController,UITableViewDataSource,UITable
         }else{
             displayLocation = savedLocation
         }
-        self.cityLabel.text = displayLocation
+        cityName = displayLocation
+        cityArray = cityName.componentsSeparatedByString(",")
+        self.cityLabel.text = cityArray[0]
+
+      //  self.cityLabel.text = displayLocation
         if savedLocation == nil{
             let errorAlert = UIAlertController(title: "Please enable location services", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
             errorAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))

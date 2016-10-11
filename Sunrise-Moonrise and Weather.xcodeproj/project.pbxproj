@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A42AF017834C3FE9CE3C9FF /* libPods-Sunrise-Moonrise and Weather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 775395F7E90CB08C6850B278 /* libPods-Sunrise-Moonrise and Weather.a */; };
 		913CC9E21C48707100A72912 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913CC9E11C48707000A72912 /* Weather.swift */; };
+		915815D81D6D1433005768B2 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915815D71D6D1433005768B2 /* SearchResultsController.swift */; };
 		915E98341C3B4786009B1161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E98331C3B4786009B1161 /* AppDelegate.swift */; };
 		915E98361C3B4786009B1161 /* CurrentForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E98351C3B4786009B1161 /* CurrentForecastViewController.swift */; };
 		915E98391C3B4787009B1161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E98371C3B4787009B1161 /* Main.storyboard */; };
@@ -49,7 +51,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		598169DC11BB9AF133767F9E /* Pods-Sunrise-Moonrise and Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sunrise-Moonrise and Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sunrise-Moonrise and Weather/Pods-Sunrise-Moonrise and Weather.debug.xcconfig"; sourceTree = "<group>"; };
+		6225872D61BB24ECB6535C3B /* Pods_Sunrise_Moonrise_and_WeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sunrise_Moonrise_and_WeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75DF9DC3549039A768AE0F88 /* Pods-Sunrise-Moonrise and Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sunrise-Moonrise and Weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sunrise-Moonrise and Weather/Pods-Sunrise-Moonrise and Weather.release.xcconfig"; sourceTree = "<group>"; };
+		775395F7E90CB08C6850B278 /* libPods-Sunrise-Moonrise and Weather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sunrise-Moonrise and Weather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F2A3F99C615589C8D2285BB /* Pods_Sunrise_Moonrise_and_WeatherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sunrise_Moonrise_and_WeatherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		913CC9E11C48707000A72912 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		915815D71D6D1433005768B2 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		915E98301C3B4786009B1161 /* Sunrise-Moonrise and Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sunrise-Moonrise and Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		915E98331C3B4786009B1161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		915E98351C3B4786009B1161 /* CurrentForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentForecastViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A42AF017834C3FE9CE3C9FF /* libPods-Sunrise-Moonrise and Weather.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +120,8 @@
 				915E98471C3B4787009B1161 /* Sunrise-Moonrise and WeatherTests */,
 				915E98521C3B4787009B1161 /* Sunrise-Moonrise and WeatherUITests */,
 				915E98311C3B4786009B1161 /* Products */,
+				E5E012FC9C4FE2AF4E4F9B76 /* Pods */,
+				D4909A5E5FA4779F62AD9809 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,8 +201,28 @@
 				915E98611C3DEB71009B1161 /* WeekForecastViewController.swift */,
 				915E98351C3B4786009B1161 /* CurrentForecastViewController.swift */,
 				91A3DB6F1C5AA3FC00C292A7 /* TabBarViewController.swift */,
+				915815D71D6D1433005768B2 /* SearchResultsController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		D4909A5E5FA4779F62AD9809 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6225872D61BB24ECB6535C3B /* Pods_Sunrise_Moonrise_and_WeatherTests.framework */,
+				8F2A3F99C615589C8D2285BB /* Pods_Sunrise_Moonrise_and_WeatherUITests.framework */,
+				775395F7E90CB08C6850B278 /* libPods-Sunrise-Moonrise and Weather.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5E012FC9C4FE2AF4E4F9B76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				598169DC11BB9AF133767F9E /* Pods-Sunrise-Moonrise and Weather.debug.xcconfig */,
+				75DF9DC3549039A768AE0F88 /* Pods-Sunrise-Moonrise and Weather.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,9 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 915E98581C3B4787009B1161 /* Build configuration list for PBXNativeTarget "Sunrise-Moonrise and Weather" */;
 			buildPhases = (
+				D03CD4617D339FFA7976CE37 /* [CP] Check Pods Manifest.lock */,
 				915E982C1C3B4786009B1161 /* Sources */,
 				915E982D1C3B4786009B1161 /* Frameworks */,
 				915E982E1C3B4786009B1161 /* Resources */,
+				3E1C2B2A12F5BC882090D6F9 /* [CP] Embed Pods Frameworks */,
+				A39BFD309C313B903B4661B2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,9 +252,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 915E985B1C3B4787009B1161 /* Build configuration list for PBXNativeTarget "Sunrise-Moonrise and WeatherTests" */;
 			buildPhases = (
+				7B16568B4AB3334A35858CBF /* [CP] Check Pods Manifest.lock */,
 				915E98401C3B4787009B1161 /* Sources */,
 				915E98411C3B4787009B1161 /* Frameworks */,
 				915E98421C3B4787009B1161 /* Resources */,
+				47A980B6F2A6F925130FEC42 /* [CP] Embed Pods Frameworks */,
+				09CCB3AFD973E9D75D42F101 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,9 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 915E985E1C3B4787009B1161 /* Build configuration list for PBXNativeTarget "Sunrise-Moonrise and WeatherUITests" */;
 			buildPhases = (
+				BC87B8621993B2EC0B8EA9FC /* [CP] Check Pods Manifest.lock */,
 				915E984B1C3B4787009B1161 /* Sources */,
 				915E984C1C3B4787009B1161 /* Frameworks */,
 				915E984D1C3B4787009B1161 /* Resources */,
+				CFA360336AFBC87E590A62D0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,6 +301,7 @@
 				TargetAttributes = {
 					915E982F1C3B4786009B1161 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 66LML236QE;
 					};
 					915E98431C3B4787009B1161 = {
 						CreatedOnToolsVersion = 7.1;
@@ -320,6 +360,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09CCB3AFD973E9D75D42F101 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sunrise-Moonrise and WeatherTests/Pods-Sunrise-Moonrise and WeatherTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E1C2B2A12F5BC882090D6F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sunrise-Moonrise and Weather/Pods-Sunrise-Moonrise and Weather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47A980B6F2A6F925130FEC42 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sunrise-Moonrise and WeatherTests/Pods-Sunrise-Moonrise and WeatherTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B16568B4AB3334A35858CBF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A39BFD309C313B903B4661B2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sunrise-Moonrise and Weather/Pods-Sunrise-Moonrise and Weather-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC87B8621993B2EC0B8EA9FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CFA360336AFBC87E590A62D0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sunrise-Moonrise and WeatherUITests/Pods-Sunrise-Moonrise and WeatherUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D03CD4617D339FFA7976CE37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		915E982C1C3B4786009B1161 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -329,6 +492,7 @@
 				91A3DB6C1C59962300C292A7 /* Sun.swift in Sources */,
 				913CC9E21C48707100A72912 /* Weather.swift in Sources */,
 				915E98681C3DEC71009B1161 /* AerisAPIClient.swift in Sources */,
+				915815D81D6D1433005768B2 /* SearchResultsController.swift in Sources */,
 				91A3DB721C5C2C8600C292A7 /* CoreDataStackManager.swift in Sources */,
 				915E98361C3B4786009B1161 /* CurrentForecastViewController.swift in Sources */,
 				91A3DB681C56F23F00C292A7 /* WeekForecast.swift in Sources */,
@@ -479,13 +643,17 @@
 		};
 		915E98591C3B4787009B1161 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 598169DC11BB9AF133767F9E /* Pods-Sunrise-Moonrise and Weather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Sunrise-Moonrise and Weather/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Sangeetha.Sunrise-Moonrise-and-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Sunrise_Moonrise_and_Weather-Swift.h";
@@ -495,13 +663,17 @@
 		};
 		915E985A1C3B4787009B1161 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75DF9DC3549039A768AE0F88 /* Pods-Sunrise-Moonrise and Weather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Sunrise-Moonrise and Weather/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Sangeetha.Sunrise-Moonrise-and-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Sunrise_Moonrise_and_Weather-Swift.h";
